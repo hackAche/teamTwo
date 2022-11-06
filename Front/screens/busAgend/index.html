@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="functions.js"></script>
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="form">
+    <div class="imgcontainer">
+      <img src="images/UFPEL-ESCUDO-2013.png" alt="UFPEL" class="ufpel_logo">
+    </div>
+
+    <div class="container">
+      <label class="lbl" for="matricula"><b>Matrícula</b></label>
+      <input type="text" placeholder="Insira a matrícula aqui" name="matricula" id="matriculaField">
+
+      <label class="lbl" for="psw"><b>Senha</b></label>
+      <input type="password" placeholder="Insira a senha aqui" name="psw">
+
+      <a href="agend.html"><button type="submit" onclick="guardaMatricula()">Login</button></a>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Lembre-se de mim
+      </label>
+    </div>
+  </div>
+
+  <script>
+    function guardaMatricula() {
+      let matricula = document.getElementById('matriculaField').value
+
+      window.localStorage.setItem("matricula", matricula);
+      var teste = localStorage.getItem("matricula");
+      console.log(teste)
+    }
+  </script>
+
+</body>
+
+</html>
